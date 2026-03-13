@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eilyn Giselle</title>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mis Quince Eilyn Giselle">
+  <meta property="og:description" content="Te invitamos a celebrar con nosotros.">
+  <meta property="og:image" content="">
+  <meta name="keywords" content="invitación de quince">
+  <meta name="author" content="Two Design | Invitaciones Digitales">
+  <link rel="stylesheet" href="style.css">
+  <!-- (Opcional) Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Pinyon+Script&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://cdn.lordicon.com/xdjxvujz.js"></script>
+</head>
+<body>
+  <!-- ===================== HERO / SOBRE (PORTADA) ===================== -->
+<header class="cover" id="cover">
+  <div class="cover-inner">
+    <div class="mono">
+      <img src="images/MONO1.svg" alt="Monograma Nicolas & Abihgail" class="mono-img">
+    </div>
+    <h1 class="couple">Eilyn Giselle<span class="amp"></span></h1>
+    <h1 class="couple">Montenegro Salazar<span class="amp"></span></h1>
+
+
+    <div class="envelope-wrap">
+      <img class="envelope" src="images/ENVELOPE.svg" alt="Sobre invitación">
+    </div>
+
+    <div class="guest-card">
+      <div class="guest-line" id="guestCardName">Nombre del invitado</div>
+      <div class="guest-sub">Hemos reservado</div>
+      <div class="guest-seats">
+        <span id="guestCardSeats">x</span> <span id="guestCardSeatsTxt">lugares</span> en su honor
+      </div>
+    </div>
+
+    <button class="btn-primary" id="btnOpenInvite" type="button">
+      Abrir invitación
+    </button>
+  </div>
+
+  <div class="scroll-hint">Desliza para ver más</div>
+</header>
+
+<!-- ===================== CONTENIDO INVITACIÓN ===================== -->
+<main id="invitation" class="invitation" aria-hidden="true">
+
+  <!-- HERO FOTO -->
+  <section class="hero-photo fade-in-element" id="hero">
+    <div class="hero-overlay">
+      <div class="mono hero-mono fade-in-element">
+        <img src="Images/MONO1.svg" alt="Monograma" class="mono-img hero-mono-img">
+      </div>
+    </div>
+  </section>
+
+  <!-- NOMBRES EDITORIAL + FECHA VERTICAL + MÚSICA -->
+  <section class="names-editorial fade-in-element" id="names">
+    <div class="names-grid">
+      <div class="names-block">
+        <div class="name-lines">
+          <div>Eilyn Giselle</div>
+          <div>Montenegro Salazar</div>
+        </div>
+      </div>
+
+      <div class="date-vertical">
+        <span>11</span>
+        <span>04</span>
+        <span>26</span>
+      </div>
+    </div>
+
+
+    <p class="names-text">Ha llegado el día que he soñado, ha llegado el día que he esperado, ha llegado el día más feliz de mi vida, y quiero que tú estés a mi lado.</p>
+
+    <p class="music-text">Dale play</p>
+    <button class="music-btn" id="btnMusic" type="button" aria-label="Música">
+      ▶
+    </button>
+    
+    <audio id="bgMusic" preload="auto" loop>
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <!-- CONTADOR -->
+  <section class="countdown fade-in-element" id="countdown">
+    <h3>Solo faltan</h3>
+
+    <div class="count-row">
+
+      <div class="count-item">
+        <div class="flip" id="flipDays">
+          <div class="top"><span class="digit">00</span></div>
+          <div class="bottom"><span class="digit">00</span></div>
+          <div class="top-flip"><span class="digit">00</span></div>
+          <div class="bottom-flip"><span class="digit">00</span></div>
+        </div>
+        <div class="label">DÍAS</div>
+      </div>
+  
+      <div class="count-item">
+        <div class="flip" id="flipHours">
+          <div class="top"><span class="digit">00</span></div>
+          <div class="bottom"><span class="digit">00</span></div>
+          <div class="top-flip"><span class="digit">00</span></div>
+          <div class="bottom-flip"><span class="digit">00</span></div>
+        </div>
+        <div class="label">HORAS</div>
+      </div>
+  
+      <div class="count-item">
+        <div class="flip" id="flipMins">
+          <div class="top"><span class="digit">00</span></div>
+          <div class="bottom"><span class="digit">00</span></div>
+          <div class="top-flip"><span class="digit">00</span></div>
+          <div class="bottom-flip"><span class="digit">00</span></div>
+        </div>
+        <div class="label">MIN</div>
+      </div>
+  
+      <div class="count-item">
+        <div class="flip" id="flipSecs">
+          <div class="top"><span class="digit">00</span></div>
+          <div class="bottom"><span class="digit">00</span></div>
+          <div class="top-flip"><span class="digit">00</span></div>
+          <div class="bottom-flip"><span class="digit">00</span></div>
+        </div>
+        <div class="label">SEG</div>
+      </div>
+    </div>
+
+    <a class="btn-outline calendar-btn" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+quince+Eilyn+Giselle&dates=20260411/20260412&details=Mis+quince+Eilyn+y+Giselle&location=" target="_blank" rel="noopener">Agregar al calendario</a>
+
+    <div class="half-photo">
+      <img src="images/V1.jpg" alt="Foto pareja">
+    </div>
+  </section>
+
+  <section class="blessing fade-in-element" id="blessing">
+ <h3>Con la bendición de Dios y de mis amados padres</h3>
+
+    <div class="parents">
+      <p>Beatriz Antonia Salazar Barrera &</p>
+      <p>Héctor Rodolfo Montenegro Berganza</p>
+    </div>
+
+  </section>
+<!-- FOTO FULLSCREEN SEPARADOR -->
+<section class="full-sep" style="background-image:url('images/V2.jpg')"></section>
+  <!-- ITINERARIO -->
+  <section class="itinerary fade-in-element" id="itinerary">
+    <div class="event-card">
+      <div class="event-top">
+        <div class="event-icon">
+          <lord-icon src="https://cdn.lordicon.com/lhzhnixi.json" 
+          stroke="light" 
+          trigger="loop"
+          colors="primary:#93525e,secondary:#c88f99"
+          class="lord-icon-style">
+        </lord-icon>
+        </div>
+        <div>
+          <div class="event-title">Recepción</div>
+          <div class="event-place">Hotel Los Conacastes</div>
+          <div class="event-time">6:00 pm</div>
+        </div>
+         <!-- IMAGEN DEL LUGAR -->
+        <div class="event-photo">
+          <img src="images/hotel.png" alt="Lugar de la ceremonia">
+        </div>
+      </div>
+      <div class="event-address">Asunción Mita, Jutiapa</div>
+      <a class="btn-outline" href="https://maps.app.goo.gl/5trTWk931j26AgDE8?g_st=aw" target="_blank" rel="noopener">Cómo llegar</a>
+    </div>
+  </section>
+
+  <!-- FOTO FULLSCREEN SEPARADOR -->
+  <section class="full-sep" style="background-image:url('images/V1.jpg')"></section>
+
+  <!-- DRESS CODE -->
+  <section class="dress fade-in-element" id="dress">
+    <div class="event-icon">
+      <lord-icon src="https://cdn.lordicon.com/okgbpdra.json" 
+      stroke="light" 
+      trigger="loop"
+      colors="primary:#93525e,secondary:#c88f99"
+      class="lord-icon-style">
+    </lord-icon>
+    </div>
+    <h3>Código de vestimenta</h3>
+    <p class="dress-note">Formal y elegante, dejamos estos links para que puedas tener una idea y referencia.</p>
+
+    <div class="dresscode-buttons">
+      <button class="btn-outline calendar-btn" onclick="window.open('https://es.pinterest.com/search/pins/?q=vestidos%20formales%20largos%20juveniles&rs=typed', '_blank')">
+          Ideas para Damas
+      </button>
+      <button class="btn-outline calendar-btn" onclick="window.open('https://www.pinterest.com/search/pins/?q=Traje%20formal%20caballeros&amp;rs=typed', '_blank')">
+          Ideas para Caballeros
+      </button>
+  </div>
+  </section>
+
+      <!-- NO NIÑOS -->
+      <section class="no-kids fade-in-element" id="noKids">
+        <p>
+          ¡Importante!
+          <p>Si pudieras llegar a la hora acordada te lo agradecería. La fiesta está preparada para que la disfrutemos juntos...</p>
+        </p>
+      </section>
+
+  <section class="full-sep" style="background-image:url('/Images/V3.jpg')"></section>
+
+  <!-- MESA DE REGALOS -->
+<!-- ================= MESA DE REGALOS ================= -->
+<section class="gifts fade-in-element" id="gifts">
+  <div class="event-icon">
+    <lord-icon src="https://cdn.lordicon.com/ibydboev.json" 
+    stroke="light" 
+    trigger="loop"
+    colors="primary:#93525e,secondary:#c88f99"
+    class="lord-icon-style">
+  </lord-icon>
+  </div>
+  <h3>Regalos</h3>
+
+    <p class="gifts-strong">Tu presencia es el mejor regalo que podemos recibir. Si deseas tener un detalle adicional con nosotros, con mucho cariño agradeceremos tu contribución en un sobre que podrás depositar en el cofre dispuesto el día de la celebración.</p>
+  </div>
+
+</section>
+<div class="playlist-section fade-in-element visible" style="transition-delay: 0.8s;">
+  <h2>Playlist</h2>
+  <lord-icon src="https://cdn.lordicon.com/vvlnxtgv.json" stroke="light" colors="primary:#93525e,secondary:#c88f99" class="lord-icon-style"></lord-icon>
+  <p>Nos encantaría que nos sugieras esas canciones que sabes que son geniales y no pueden faltar en nuestra fiesta.</p>
+  <button class="btn-outline calendar-btn" onclick="window.open('https://open.spotify.com/playlist/6wfycqYeB7bpxoL2ZiyzBX?si=b527255d30be4452&pt=2423aab6a7fcbe881c186dd47926cf41', '_blank')">
+      Abrir Spotify
+  </button>                              
+</div>
+
+<section class="full-sep" style="background-image:url('/Images/V4.jpg')"></section>
+<section class="gallery fade-in-element" id="gallery">
+
+  <h3>Un vistazo a mi historia</h3>
+
+  <p class="gallery-text">
+    Cada fotografía guarda un recuerdo especial.  
+    Aquí hay pequeños momentos de mi infancia y crecimiento que hoy
+    me traen hasta este día tan importante.
+  </p>
+
+  <div class="gallery-grid">
+
+    <img src="images/H1.jpg" class="gallery-img" alt="Foto 1">
+    <img src="images/H2.jpg" class="gallery-img" alt="Foto 2">
+    <img src="images/H3.jpg" class="gallery-img" alt="Foto 3">
+    <img src="images/H4.jpg" class="gallery-img" alt="Foto 4">
+    <img src="images/V1.jpg" class="gallery-img" alt="Foto 5">
+    <img src="images/V2.jpg" class="gallery-img" alt="Foto 6">
+
+  </div>
+
+</section>
+
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close">&times;</span>
+  <img class="lightbox-img" id="lightboxImg">
+</div>
+  <!-- Pega aquí exactamente tu sección RSVP + Modal (como lo enviaste) -->
+
+  <div class="album-section fade-in-element visible" style="transition-delay: 1.15s;">
+    <h2>¡Hagamos los recuerdos inolvidables!</h2>
+    <h1 class="hashtag">#misxveilyngiselle</h1>
+    <div class="qr-container">
+        <div id="qrCode"></div>
+        <img src="/images/QREG.svg" alt="Escane el QR" width="400">
+        <p>Escanea el código QR o usa el botón para subir tus fotos</p>
+        <a class="btn-outline calendar-btn" href="https://drive.google.com/drive/folders/1IqnIe3wXog-rQ6L99iqG-hUKPOqXh18E?usp=drive_link" target="_blank">Subir fotos</a>
+    </div>
+</div>
+  <!-- ================= RSVP SECTION ================= -->
+<section class="rsvp fade-in-element" id="rsvpSection">
+  <div class="event-icon">
+    <lord-icon src="https://cdn.lordicon.com/wzwygmng.json" 
+    stroke="light" 
+    trigger="loop"
+    colors="primary:#93525e,secondary:#c88f99"
+    class="lord-icon-style">
+  </lord-icon>
+  </div>
+  <h3>Confirmar Asistencia</h3>
+  <p class="rsvp-strong">
+    Para nosotros es muy importante que confirmes tu asistencia lo antes posible,
+    o bien indicarnos si no podrás acompañarnos.
+  </p>
+
+  <button id="btnConfirmarRsvp" type="button">
+    Confirmar
+  </button>
+
+  <div id="msgRsvp" class="rsvp-msg" style="display:none"></div>
+</section>
+
+
+<section class="full-sep" style="background-image:url('images/V5.jpg')"></section>
+<section class="wishes-section fade-in-element">
+
+  <h2>Buenos deseos</h2>
+
+  <button class="btn-outline calendar-btn" type="button" onclick="toggleWishes()">
+    Ver buenos deseos
+  </button>
+
+  <div id="wishes-container" class="hidden"></div>
+
+  <button class="btn-outline calendar-btn" type="button" onclick="toggleWishForm()">
+    Enviar buenos deseos
+  </button>
+
+  <div id="wish-form" class="hidden">
+
+    <label for="wish-name">Nombre</label>
+    <input type="text" id="wish-name" placeholder="Tu nombre">
+
+    <label for="wish-message">Mensaje</label>
+    <textarea id="wish-message" placeholder="Escribe tu mensaje"></textarea>
+
+    <button  class="btn-outline calendar-btn" type="button" onclick="submitWish()">
+      Enviar
+    </button>
+
+  </div>
+
+</section>
+  <!-- FRASE FINAL -->
+  <section class="love-quote fade-in-element" id="love">
+    <p class="quote-script">Gracias por ser parte de este día tan especial! Nos sentiremos muy bendecidos de poder contar con su presencia.</p>
+  </section>
+
+  <!-- FOTO CAMBIANTE -->
+  <section class="full-sep full-sep-rotating" id="rotatingSep">
+    <img id="rotatingSepImg" src="images/V4.jpg" alt="Foto pareja">
+  </section>
+
+  <!-- CIERRE -->
+  <section class="closing fade-in-element" id="closing">
+    <div class="mono">
+      <img src="images/MONO1.svg" alt="Monograma Nicolas & Abihgail" class="mono-img">
+    </div>
+    <h3>Mis Quince Eilyn Giselle</h3>
+    <p>11 de Abril de 2026</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div id="social-icons">
+<a href="https://wa.me/50236011737" target="_blank" aria-label="Whatsapp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<a href="https://www.facebook.com/thetwodesign" target="_blank" aria-label="Facebook">
+  <i class="fab fa-facebook"></i>
+</a>
+<a href="https://www.instagram.com/thetwodesign" target="_blank" aria-label="Instagram">
+  <i class="fab fa-instagram"></i>
+</a>
+</div>
+    <div class="footer-logo">
+      <img id="footer-logo" alt="Logo de la empresa" src="/Images/logo.png">
+    </div>
+  </footer>
+
+</main>
+<script type="module" src="database.js"></script>
+<script src="loads.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+  
