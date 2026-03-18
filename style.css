@@ -4,7 +4,7 @@
   
     /* OLIVO */
     --olive: rgb(192, 185, 143);
-    --olive-dark: #e2b5bd;
+    --olive-dark: #93525e;
     --olive-soft: rgba(85,107,47,.12);
   
     --line: rgba(29,29,29,.18);
@@ -55,16 +55,27 @@
     font-size:48px;
     font-weight:500;
     font-family: var(--cursive);
-    background: linear-gradient(120deg, #fff6f7 0%,#f3d9dd 15%,#e2b5bd 30%,#d29faa 45%,#fff1f3 55%,#e2b5bd 65%,#c88f99 80%, #f3d9dd 100%);
+    background: linear-gradient(120deg, 
+    #f5c3cc 0%,
+    #e58a9b 20%,
+    #d46a7f 40%,
+    #f7aebc 50%,   /* ← highlight controlado */
+    #d46a7f 60%,
+    #c85a70 80%,
+    #e58a9b 100%
+    );
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+    animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
   }
   
-  @keyframes foilShine{
-    to{
-      background-position:200% center;
+  @keyframes foilShine {
+    0% {
+      background-position: 0% center;
+    }
+    100% {
+      background-position: 200% center;
     }
   }
 
@@ -103,11 +114,21 @@
     margin-bottom:6px;
     font-family: var(--cursive);
     font-size: 30px;
-    background: linear-gradient(120deg,#fffbe6, #e8e0b8,#c0b98f,#a69f73,#fff4c9,#c0b98f,#8f875d,#e8e0b8);
+        background: linear-gradient(120deg,
+#f2e6b3 0%,     /* dorado claro (sin blanco) */
+#d6c27a 20%,
+#b8a85c 35%,
+#9c8c49 45%,
+#e0cd8a 50%,    /* highlight controlado */
+#b8a85c 60%,
+#8a7a3f 75%,
+#d6c27a 90%
+);
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   
   .guest-sub{
@@ -156,6 +177,15 @@ a{
     text-transform:uppercase;
     color:rgba(29,29,29,.55);
   }
+  .envelope {
+    cursor: pointer;
+    transition: transform .3s ease, filter .3s ease;
+  }
+  
+  .envelope:hover {
+    transform: translateY(-6px) scale(1.03);
+    filter: drop-shadow(0 24px 32px rgba(0,0,0,.18));
+  }
   
   .invitation{display:none}
   .invitation.is-open{display:block}
@@ -163,7 +193,7 @@ a{
   .hero-photo{
     height:100vh;
     position:relative;
-    background:url("images/H3.jpg") center/cover no-repeat;
+    background:url("images/FP-1.svg") center/cover no-repeat;
   }
   .hero-photo {
     position: relative;
@@ -177,7 +207,6 @@ a{
     justify-content:center;
     padding-top:26px;
   }
-  .hero-mono{color:white}
   /* ================= TRUE LOVE DORADO ================= */
 
 .reveal-gold {
@@ -185,11 +214,21 @@ a{
     font-size: 50px;
     margin: 6px 0;
     /* Degradado dorado */
-    background: linear-gradient(120deg,#fffbe6, #e8e0b8,#c0b98f,#a69f73,#fff4c9,#c0b98f,#8f875d,#e8e0b8);
+    background: linear-gradient(120deg,
+#f2e6b3 0%,     /* dorado claro (sin blanco) */
+#d6c27a 20%,
+#b8a85c 35%,
+#9c8c49 45%,
+#e0cd8a 50%,    /* highlight controlado */
+#b8a85c 60%,
+#8a7a3f 75%,
+#d6c27a 90%
+);
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   
   /* Cuando aparece */
@@ -226,13 +265,45 @@ a{
     align-items: flex-end;
     justify-content: center;
     font-family: var(--cursive);
-    background: linear-gradient(120deg, #fff6f7 0%,#f3d9dd 15%,#e2b5bd 30%,#d29faa 45%,#fff1f3 55%,#e2b5bd 65%,#c88f99 80%, #f3d9dd 100%);
+    background: linear-gradient(120deg, 
+    #f5c3cc 0%,
+    #e58a9b 20%,
+    #d46a7f 40%,
+    #f7aebc 50%,   /* ← highlight controlado */
+    #d46a7f 60%,
+    #c85a70 80%,
+    #e58a9b 100%
+    );
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+    animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
-  
+  .quote-names{
+      font-size:40px;
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--cursive);
+      background: linear-gradient(120deg,
+      #f2e6b3 0%,     /* dorado claro (sin blanco) */
+      #d6c27a 20%,
+      #b8a85c 35%,
+      #9c8c49 45%,
+      #e0cd8a 50%,    /* highlight controlado */
+      #b8a85c 60%,
+      #8a7a3f 75%,
+      #d6c27a 90%
+      );
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
   .date-vertical{
     border-left:1px solid var(--line);
     padding-left:16px;
@@ -244,11 +315,21 @@ a{
     font-size: 50px;
     font-family: var(--text);
     font-style: italic;
-    background: linear-gradient(120deg,#fffbe6, #e8e0b8,#c0b98f,#a69f73,#fff4c9,#c0b98f,#8f875d,#e8e0b8);
+        background: linear-gradient(120deg,
+#f2e6b3 0%,     /* dorado claro (sin blanco) */
+#d6c27a 20%,
+#b8a85c 35%,
+#9c8c49 45%,
+#e0cd8a 50%,    /* highlight controlado */
+#b8a85c 60%,
+#8a7a3f 75%,
+#d6c27a 90%
+);
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   
   .names-text{
@@ -264,6 +345,7 @@ a{
     font-size:25px;
     color:#93525e;
    font-family: var(--cursive);
+   margin-top: 30px;
   }
   
   .music-btn{
@@ -291,11 +373,20 @@ a{
     margin:0 0 18px;
     font-size:30px;
     font-family: var(--cursive);
-    background: linear-gradient(120deg, #fff6f7 0%,#f3d9dd 15%,#e2b5bd 30%,#d29faa 45%,#fff1f3 55%,#e2b5bd 65%,#c88f99 80%, #f3d9dd 100%);
+ background: linear-gradient(120deg, 
+    #f5c3cc 0%,
+    #e58a9b 20%,
+    #d46a7f 40%,
+    #f7aebc 50%,   /* ← highlight controlado */
+    #d46a7f 60%,
+    #c85a70 80%,
+    #e58a9b 100%
+    );
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
   /* ====== CONTADOR HORIZONTAL ====== */
   .count-row{
@@ -437,16 +528,33 @@ a{
     text-align:center;
   }
   .blessing h3{
-    font-size: 22px;
-    text-transform:uppercase;
-    font-family: var(--title);
+    font-size: 40px;
+    font-family: var(--cursive);
     font-weight: 500;
     /* Degradado dorado */
-    background: linear-gradient(120deg,#fffbe6, #e8e0b8,#c0b98f,#a69f73,#fff4c9,#c0b98f,#8f875d,#e8e0b8);
+        background: linear-gradient(120deg,
+#f2e6b3 0%,     /* dorado claro (sin blanco) */
+#d6c27a 20%,
+#b8a85c 35%,
+#9c8c49 45%,
+#e0cd8a 50%,    /* highlight controlado */
+#b8a85c 60%,
+#8a7a3f 75%,
+#d6c27a 90%
+);
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+   margin: 0;
+  }
+  .blessing p {
+    margin-top: 10px;
+    font-family: var(--text);
+    font-size: 22px;
+    color: #93525e;
+    text-align: center;   /* ✅ esto es lo que centra texto */
   }
   .parents{
     display:flex;
@@ -457,12 +565,23 @@ a{
   .parents p{
     margin:0;
     font-family: var(--cursive);
-    font-size:40px;
-    background: linear-gradient(120deg, #fff6f7 0%,#f3d9dd 15%,#e2b5bd 30%,#d29faa 45%,#fff1f3 55%,#e2b5bd 65%,#c88f99 80%, #f3d9dd 100%);
+    font-size:38px;
+    background: linear-gradient(120deg,
+    #f2e6b3 0%,     /* dorado claro (sin blanco) */
+    #d6c27a 20%,
+    #b8a85c 35%,
+    #9c8c49 45%,
+    #e0cd8a 50%,    /* highlight controlado */
+    #b8a85c 60%,
+    #8a7a3f 75%,
+    #d6c27a 90%
+    );
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+    animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    padding: 10px;
   }
 
   #itinerary{
@@ -487,9 +606,10 @@ a{
   height: 150px;
 }
   .event-icon img{
-    width:100%;
-    height:100%;
+    width:90%;
+    height:90%;
     object-fit:contain;
+    margin-top: 30px;
   }
   .event-top, .gifts, .rsvp, .playlist-section, .album-section{
     display:flex; 
@@ -531,20 +651,32 @@ a{
   background: linear-gradient(to bottom,rgba(0,0,0,0) 60%,rgba(0,0,0,0.15) 100%);
   pointer-events: none;
 }
-  .event-title, .dress h3, .gifts h3, .rsvp h3, .playlist-section h2, .gallery h3, .album-section h2, .album-section h1, .love-quote p, .wishes-section h2{
+  .event-title, .dress h3, .gifts h3, .rsvp h3, .playlist-section h2, .gallery h3, .album-section h2, .album-section h1, .love-quote p, .wishes-section h2, .gifts h2, .love-quote p{
     font-size:40px;
     font-family: var(--cursive);
     display: flex;
     justify-content: center;
-    background: linear-gradient(120deg, #fff6f7 0%,#f3d9dd 15%,#e2b5bd 30%,#d29faa 45%,#fff1f3 55%,#e2b5bd 65%,#c88f99 80%, #f3d9dd 100%);
+ background: linear-gradient(120deg, 
+    #f5c3cc 0%,
+    #e58a9b 20%,
+    #d46a7f 40%,
+    #f7aebc 50%,   /* ← highlight controlado */
+    #d46a7f 60%,
+    #c85a70 80%,
+    #e58a9b 100%
+    );
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
   }
-  .dress h3, .dress-strong, .dress-note, .gifts h3, .gifts-strong, .rsvp h3, .rsvp-strong, .playlist-section h2, .gallery h3, .album-section h2, .album-section h1, .love-quote p, .wishes-section h2{
+  .dress h3, .dress-strong, .dress-note, .gifts h3, .gifts-strong, .rsvp h3, .rsvp-strong, .playlist-section h2, .gallery h3, .album-section h2, .album-section h1, .love-quote p, .wishes-section h2,p{
     margin-top: 0;
     margin-bottom: 0;
+  }
+  .dress-note {
+    margin-bottom: 30px;
   }
   .event-place, .dress-strong{
     font-size:22px;
@@ -563,7 +695,7 @@ a{
     justify-content: center;
     font-size: 22px;
 }
-  .event-address, .dress-note, .gifts-strong, .rsvp-strong, .playlist-section p, .gallery p, .album-section p, .closing p, label{
+  .event-address, .dress-note, .gifts-strong, .rsvp-strong, .playlist-section p, .gallery p, .album-section p, .closing p, label, p{
     margin-top: 10px;
     font-family: var(--text);
     font-size: 22px;
@@ -571,11 +703,20 @@ a{
     text-align: center;   /* ✅ esto es lo que centra texto */
   }
   .no-kids p{
-    background: linear-gradient(120deg, #fff6f7 0%,#f3d9dd 15%,#e2b5bd 30%,#d29faa 45%,#fff1f3 55%,#e2b5bd 65%,#c88f99 80%, #f3d9dd 100%);
+ background: linear-gradient(120deg, 
+    #f5c3cc 0%,
+    #e58a9b 20%,
+    #d46a7f 40%,
+    #f7aebc 50%,   /* ← highlight controlado */
+    #d46a7f 60%,
+    #c85a70 80%,
+    #e58a9b 100%
+    );
     background-size: 200% auto;
     -webkit-background-clip: text;
     color: transparent;
-    animation: foilShine 6s linear infinite;
+      animation: foilShine 10s cubic-bezier(.4,0,.2,1) infinite alternate;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1);
     margin-top: 10px;
     font-family: var(--text);
     font-size: 22px;
@@ -715,7 +856,7 @@ a{
     justify-content: center;
     align-items: center;
   }
-  .no-kids, .playlist-section, .love-quote{
+.playlist-section, .love-quote{
     background-color: #f7e9ec;
     padding:16px;
     display: flex;
@@ -723,10 +864,12 @@ a{
     justify-content: center;
     align-items: center;
   }
-  .love-quote p {
-    color: var(--olive-dark);
-    font-family: var(--cursive);
-    font-size: 28px;
+  .no-kids{
+    padding:16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   .dress, .gifts, .love-quote, .closing{
     padding:44px 18px;
@@ -841,7 +984,7 @@ a{
   }
   .hero-mono-img {
     width: 100px;
-    filter: drop-shadow(0 5px 15px rgba(0,0,0,.4));
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, .1));
   }
   .calendar-btn{
     margin: 18px auto 0;
@@ -1109,11 +1252,6 @@ section.is-visible .btn-outline:nth-of-type(2) {
   flex-direction:column;
   gap:10px;
 }
-
-.hidden{
-  display:none;
-}
-
-.visible{
-  display:block;
+.hidden {
+  display: none !important;
 }

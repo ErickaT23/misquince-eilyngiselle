@@ -13,6 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
     btnOpenInvite.addEventListener("click", openInvitation);
   }
 
+  const envelope = document.querySelector(".envelope");
+if (envelope) {
+  envelope.addEventListener("click", openInvitation);
+}
+
   // 3) Animaciones al hacer scroll
   initScrollReveal();
 
@@ -23,13 +28,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 5) Contador (cambia a tu fecha real)
   // Formato recomendado: YYYY-MM-DDT00:00:00-06:00 (Guatemala -06)
-  initFlipCountdown("2027-04-12T00:00:00-06:00");
+  initFlipCountdown("2026-04-11T00:00:00-06:00");
 
   // 6) Foto separador rotativa (si existe el elemento)
   initRotatingSep([
-    "images/H1.jpg",
-    "images/H2.jpg",
-    "images/V3.jpg",
+    "images/S1.png",
+    "images/S2.png",
+    "images/S3.png",
+    "images/S4.png",
+    "images/FP-6.png",
+    "images/FP-5.png"
     
   ]);
 });
@@ -505,88 +513,84 @@ lightbox.addEventListener("click", (e) => {
   }
 });
 
-//buenos deseos
 // =============================
-// BUENOS DESEOS
+// BUENOS DESEOS (VERSIÓN LIMPIA)
 // =============================
 
-// Mostrar / ocultar deseos
+// 🔹 Toggle lista de deseos
 window.toggleWishes = function () {
 
   const wishesDiv = document.getElementById("wishes-container");
 
   if (!wishesDiv) return;
 
-  if (wishesDiv.classList.contains("visible")) {
+  const isHidden = wishesDiv.classList.contains("hidden");
 
-    wishesDiv.classList.remove("visible");
-    wishesDiv.classList.add("hidden");
-    return;
+  // Mostrar
+  if (isHidden) {
 
-  }
+    wishesDiv.innerHTML = "Cargando deseos...";
 
-  wishesDiv.innerHTML = "Cargando deseos...";
+    escucharDeseos((lista) => {
 
-  escucharDeseos((lista) => {
+      wishesDiv.innerHTML = "";
 
-    wishesDiv.innerHTML = "";
+      lista.reverse().forEach((wish) => {
 
-    lista.reverse().forEach((wish) => {
+        const p = document.createElement("p");
+        p.innerHTML = `<strong>${wish.nombre}:</strong> ${wish.mensaje}`;
 
-      const p = document.createElement("p");
+        wishesDiv.appendChild(p);
 
-      p.innerHTML = `<strong>${wish.nombre}:</strong> ${wish.mensaje}`;
-
-      wishesDiv.appendChild(p);
+      });
 
     });
 
-  });
+    wishesDiv.classList.remove("hidden");
 
-  wishesDiv.classList.remove("hidden");
-  wishesDiv.classList.add("visible");
+  } 
+  // Ocultar
+  else {
+
+    wishesDiv.classList.add("hidden");
+
+  }
 
 };
 
 
-// Mostrar / ocultar formulario
+// 🔹 Toggle formulario (FIX PRINCIPAL)
 window.toggleWishForm = function () {
 
   const form = document.getElementById("wish-form");
 
   if (!form) return;
 
-  if (form.classList.contains("hidden")) {
-
-    form.classList.remove("hidden");
-
-  } else {
-
-    form.classList.add("hidden");
-
-  }
+  form.classList.toggle("hidden");
 
 };
 
 
-// Enviar deseo a Firebase
+// 🔹 Enviar deseo a Firebase
 window.submitWish = function () {
 
-  const name = document.getElementById("wish-name").value.trim();
-  const message = document.getElementById("wish-message").value.trim();
+  const nameInput = document.getElementById("wish-name");
+  const messageInput = document.getElementById("wish-message");
+
+  const name = nameInput.value.trim();
+  const message = messageInput.value.trim();
 
   if (!name || !message) {
-
     alert("Por favor completa tu nombre y mensaje.");
     return;
-
   }
 
   guardarDeseo(name, message)
     .then(() => {
 
-      document.getElementById("wish-name").value = "";
-      document.getElementById("wish-message").value = "";
+      // limpiar inputs
+      nameInput.value = "";
+      messageInput.value = "";
 
       alert("¡Gracias por tu mensaje!");
 
@@ -600,3 +604,14 @@ window.submitWish = function () {
 
 };
 
+
+// 🔹 Estado inicial seguro (CRÍTICO)
+document.addEventListener("DOMContentLoaded", () => {
+
+  const form = document.getElementById("wish-form");
+  const wishes = document.getElementById("wishes-container");
+
+  if (form) form.classList.add("hidden");
+  if (wishes) wishes.classList.add("hidden");
+
+});
