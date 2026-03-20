@@ -31,7 +31,7 @@
     padding:28px 18px 50px;
     position:relative;
     overflow:hidden;
-    background-image: url("images/FP.svg");
+    background-image: url("images/FP.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -242,7 +242,7 @@ a{
   .names-editorial{
     padding:44px 18px;
     text-align:center;
-    background-image: url("images/FP.svg");
+    background-image: url("images/FP.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
