@@ -193,7 +193,7 @@ a{
   .hero-photo{
     height:100vh;
     position:relative;
-    background:url("images/FP-1.svg") center/cover no-repeat;
+    background:url("images/FP-8.png") center/cover no-repeat;
   }
   .hero-photo {
     position: relative;
@@ -701,6 +701,9 @@ a{
     font-size: 22px;
     color: #93525e;
     text-align: center;   /* ✅ esto es lo que centra texto */
+  }
+  .album-section p {
+    padding: 10px;
   }
   .no-kids p{
  background: linear-gradient(120deg, 

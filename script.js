@@ -476,12 +476,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const phone = "50255682666"; // Cambia por el número de WhatsApp
 
     const message =
-`Hola, confirmo mi asistencia a la boda.
+`Hola, confirmo mi asistencia a los quince de Eilyn Giselle.
 
 Nombre: ${name}
 Número de pases: ${passes}
 
-¡Nos vemos en la celebración!`;
+¡Nos vemos en la fiesta!`;
 
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 
