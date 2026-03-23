@@ -57,7 +57,7 @@ const guests = [
   { id: "54", name: "Fernando Orellana", passes: 1 },
   { id: "55", name: "Familia Monroy Barrera", passes: 2 },
   { id: "56", name: "Andrea Monroy", passes: 1 },
-  { id: "57", name: "Karen Monroy", passes: 1 },
+  { id: "57", name: "Karen Monroy", passes: 2 },
   { id: "58", name: "Familia Monroy Villeda", passes: 3 },
   { id: "59", name: "Familia Montoya Monroy", passes: 5 },
   { id: "60", name: "Estiven Solis", passes: 1 },
@@ -92,7 +92,7 @@ const guests = [
   { id: "89", name: "Selvin Rosales", passes: 1 },
   { id: "90", name: "Sofia Vivar", passes: 1 },
   { id: "91", name: "Juan Carlos Barrera", passes: 2 },
-  { id: "92", name: "Ever Enrique Barrera", passes: 1 },
+  { id: "92", name: "Ever Enrique Barrera", passes: 2 },
   { id: "93", name: "Roquelino Reyes", passes: 1 },
 ];
 
