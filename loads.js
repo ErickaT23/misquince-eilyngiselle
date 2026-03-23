@@ -34,7 +34,7 @@ const guests = [
   { id: "31", name: "Etelvina Montenegro", passes: 1 },
   { id: "32", name: "Fermin Argueta", passes: 2 },
   { id: "33", name: "Ifrán Ayala", passes: 4 },
-  { id: "34", name: "Orlida Montenegro", passes: 2 },
+  { id: "34", name: "Orilda Montenegro", passes: 2 },
   { id: "35", name: "Blanca Montenegro", passes: 1 },
   { id: "36", name: "Héctor Montenegro", passes: 5 },
   { id: "37", name: "Manolo Alvarado", passes: 2 },
