@@ -1,7 +1,7 @@
 // ===================== LOADS.JS =====================
 // 1) Lista de invitados (ejemplo)
 const guests = [
-  { id: "1", name: "Familia Aguilar", passes: 4 },
+  { id: "1", name: "Juan Berganza", passes: 3 },
   // { id: "2", name: "María López", passes: 1 },
 ];
 
