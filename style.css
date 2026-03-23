@@ -414,101 +414,42 @@ a{
     .flip .digit{ font-size:26px; }
   }
   /* ====== FLIP DOWN REAL (PARTIDO) ====== */
-  .flip{
-    width:75px;
-    height:56px;
-    position:relative;
-    perspective: 900px;
-    border-radius:6px;
-    box-shadow:0 6px 12px rgba(0,0,0,0.15);
-    overflow:hidden;
-    background:#93525e;
-  
-    --h: 56px;
-    --half: 28px;
-  }
-  
-  /* Mitades */
-  .flip .top,
-  .flip .bottom,
-  .flip .top-flip,
-  .flip .bottom-flip{
-    position:absolute;
-    left:0;
-    width:100%;
-    height:50%;
-    overflow:hidden;
-    background: #e2b5bd;
-    backface-visibility:hidden;
-    transform-style:preserve-3d;
-  }
-  
-  .flip .top{ top:0; border-bottom:1px solid rgba(0,0,0,0.15); }
-  .flip .bottom{ bottom:0; }
-  
-  /* Número completo recortado */
-  .flip .digit{
-    position:absolute;
-    left:0;
-    width:100%;
-    height:var(--h);
+  .flip-single{
+    width:78px;
+    height:60px;
     display:flex;
     align-items:center;
     justify-content:center;
+    border-radius:6px;
+    background:#e2b5bd;
+    box-shadow:0 6px 12px rgba(0,0,0,0.15);
+    transform-style:preserve-3d;
+  }
   
+  .flip-single .digit{
     font-family:"Cormorant Garamond", serif;
-    font-size:28px;
-    font-weight:600;
+    font-size:30px;
+    font-weight:700;
+    line-height:1;
     color:#93525e;
-    letter-spacing:2px;
+    letter-spacing:0;
+    font-variant-numeric: tabular-nums;
+    -webkit-font-smoothing: antialiased;
   }
   
-  /* mitad superior visible */
-  .flip .top .digit,
-  .flip .top-flip .digit{ top:0; }
-  
-  /* mitad inferior visible */
-  .flip .bottom .digit,
-  .flip .bottom-flip .digit{ top:calc(-1 * var(--half)); }
-  
-  /* piezas animadas */
-  .flip .top-flip{
-    top:0;
-    border-bottom:1px solid rgba(0,0,0,0.15);
-    transform-origin: bottom;
-    opacity:0;
+  .flip-single.is-flipping{
+    animation: flipCard .5s ease;
   }
   
-  .flip .bottom-flip{
-    bottom:0;
-    transform-origin: top;
-    transform: rotateX(90deg);
-    opacity:0;
+  @keyframes flipCard{
+    0% { transform: rotateX(0); }
+    50% { transform: rotateX(-90deg); }
+    100% { transform: rotateX(0); }
   }
   
-  /* ✅ MÁS LENTO + “bajando” */
-  .flip.is-flipping .top-flip{
-    opacity:1;
-    animation: flipTopDown .65s ease-in forwards;
-  }
+
   
-  .flip.is-flipping .bottom-flip{
-    opacity:1;
-    animation: flipBottomDown .65s ease-out forwards;
-    animation-delay: .65s;
-  }
-  
-  /* La tapa de arriba cae hacia abajo */
-  @keyframes flipTopDown{
-    0%   { transform: rotateX(0deg); }
-    100% { transform: rotateX(90deg); }  /* ✅ baja */
-  }
-  
-  /* La de abajo entra desde atrás */
-  @keyframes flipBottomDown{
-    0%   { transform: rotateX(-90deg); } /* ✅ viene desde arriba hacia ti */
-    100% { transform: rotateX(0deg); }
-  }
+
 /* FOTO que invade la siguiente sección */
 .half-photo{
     position: relative;

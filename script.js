@@ -615,3 +615,59 @@ document.addEventListener("DOMContentLoaded", () => {
   if (wishes) wishes.classList.add("hidden");
 
 });
+
+
+
+//contaodr
+const targetDate = new Date("2026-04-11T00:00:00").getTime();
+
+function pad(value) {
+  return String(value).padStart(2, "0");
+}
+
+function updateFlipSingle(el, newValue) {
+  if (!el) return;
+
+  const digit = el.querySelector(".digit");
+  if (!digit) return;
+
+  const currentValue = digit.textContent;
+  if (currentValue === newValue) return;
+
+  el.classList.add("is-flipping");
+
+  setTimeout(() => {
+    digit.textContent = newValue;
+  }, 250);
+
+  setTimeout(() => {
+    el.classList.remove("is-flipping");
+  }, 500);
+}
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = targetDate - now;
+
+  if (distance <= 0) {
+    updateFlipSingle(document.getElementById("flipDays"), "00");
+    updateFlipSingle(document.getElementById("flipHours"), "00");
+    updateFlipSingle(document.getElementById("flipMins"), "00");
+    updateFlipSingle(document.getElementById("flipSecs"), "00");
+    clearInterval(countdownInterval);
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+  const mins = Math.floor((distance / (1000 * 60)) % 60);
+  const secs = Math.floor((distance / 1000) % 60);
+
+  updateFlipSingle(document.getElementById("flipDays"), pad(days));
+  updateFlipSingle(document.getElementById("flipHours"), pad(hours));
+  updateFlipSingle(document.getElementById("flipMins"), pad(mins));
+  updateFlipSingle(document.getElementById("flipSecs"), pad(secs));
+}
+
+updateCountdown();
+const countdownInterval = setInterval(updateCountdown, 1000);
