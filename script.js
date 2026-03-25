@@ -27,8 +27,6 @@ if (envelope) {
   initMusic();
 
   // 5) Contador (cambia a tu fecha real)
-  // Formato recomendado: YYYY-MM-DDT00:00:00-06:00 (Guatemala -06)
-  initFlipCountdown("2026-04-11T00:00:00-06:00");
 
   // 6) Foto separador rotativa (si existe el elemento)
   initRotatingSep([
@@ -237,69 +235,6 @@ function initRotatingSep(images){
 }
 
 //contador
-function initFlipCountdown(targetISO){
-  const target = new Date(targetISO).getTime();
-  const pad2 = (n) => String(n).padStart(2, "0");
-
-  const setFlip = (flipEl, newValue) => {
-    if (!flipEl) return;
-
-    const top = flipEl.querySelector(".top .digit");
-    const bottom = flipEl.querySelector(".bottom .digit");
-    const topFlip = flipEl.querySelector(".top-flip .digit");
-    const bottomFlip = flipEl.querySelector(".bottom-flip .digit");
-
-    const current = top?.textContent ?? "00";
-    if (current === newValue) return;
-
-    topFlip.textContent = current;
-    bottomFlip.textContent = newValue;
-
-    bottom.textContent = newValue;
-
-    flipEl.classList.add("is-flipping");
-
-    setTimeout(() => { top.textContent = newValue; }, 650);
-    setTimeout(() => { flipEl.classList.remove("is-flipping"); }, 1300);
-  };
-
-  const flipDays = document.getElementById("flipDays");
-  const flipHours = document.getElementById("flipHours");
-  const flipMins = document.getElementById("flipMins");
-  const flipSecs = document.getElementById("flipSecs");
-
-  const initVal = (el, v) => {
-    if (!el) return;
-    el.querySelector(".top .digit").textContent = v;
-    el.querySelector(".bottom .digit").textContent = v;
-    el.querySelector(".top-flip .digit").textContent = v;
-    el.querySelector(".bottom-flip .digit").textContent = v;
-  };
-
-  initVal(flipDays, "00");
-  initVal(flipHours, "00");
-  initVal(flipMins, "00");
-  initVal(flipSecs, "00");
-
-  const tick = () => {
-    const now = Date.now();
-    let diff = target - now;
-    if (diff < 0) diff = 0;
-
-    const days = Math.floor(diff / (1000*60*60*24));
-    const hours = Math.floor((diff / (1000*60*60)) % 24);
-    const mins = Math.floor((diff / (1000*60)) % 60);
-    const secs = Math.floor((diff / 1000) % 60);
-
-    setFlip(flipDays, pad2(days));
-    setFlip(flipHours, pad2(hours));
-    setFlip(flipMins, pad2(mins));
-    setFlip(flipSecs, pad2(secs));
-  };
-
-  tick();
-  setInterval(tick, 1000);
-}
 
 //animaciones
 // ================= ANIMACIONES POR SECCIÓN (AUTO) =================
