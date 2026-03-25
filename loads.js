@@ -94,6 +94,10 @@ const guests = [
   { id: "91", name: "Juan Carlos Barrera", passes: 2 },
   { id: "92", name: "Ever Enrique Barrera", passes: 2 },
   { id: "93", name: "Roquelino Reyes", passes: 1 },
+  { id:"94", name: "Enrique Segovia Morales", passes: 2 },
+  { id: "95", name: "Antonio Aguirre ", passes: 2 },
+  { id: "96", name: "Edgar Aguirre", passes: 1 },
+  { id: "97", name: "Florinda Aguirre", passes: 5 },
 ];
 
 // Helper: leer parámetros ?id=1
