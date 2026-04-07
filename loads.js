@@ -98,6 +98,8 @@ const guests = [
   { id: "95", name: "Antonio Aguirre ", passes: 2 },
   { id: "96", name: "Edgar Aguirre", passes: 1 },
   { id: "97", name: "Florinda Aguirre", passes: 5 },
+  { id: "98", name: "Leabin España y Jaquelin Orellana", passes: 2 },
+  { id: "99", name: "Daniel Paredes", passes: 1 },
 ];
 
 // Helper: leer parámetros ?id=1
